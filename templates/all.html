@@ -2,8 +2,15 @@
 <html>
 <head>
     <title></title>
+
 </head>
 <body>
-
+<ul>
+{% for object in object_list %}
+    <li>
+    {{ object.datetime }} - POST: {{ object.post }} - GET: {{ object.get }}
+    </li>
+{% endfor %}
+</ul>
 </body>
 </html>

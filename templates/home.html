@@ -4,6 +4,14 @@
     <title></title>
 </head>
 <body>
-Hola
+Hola<br>
+{% if post %}
+POST:
+{{ post }}
+{% endif %}
+{% if get %}
+GET:
+{{ get }}
+{% endif %}
 </body>
 </html>
