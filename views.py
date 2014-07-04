@@ -1,6 +1,7 @@
-from django.http import HttpResponse
-from django.views.generic import TemplateView, ListView
-from TerrorDeZares.models import Request
+from django.core.urlresolvers import reverse
+from django.views.generic import TemplateView, ListView, FormView, CreateView
+from TerrorDeZares.forms import FileForm
+from TerrorDeZares.models import Request, PostedFile
 
 
 class HomeView(TemplateView):
@@ -22,3 +23,16 @@ class HomeView(TemplateView):
 class All(ListView):
     template_name = 'all.html'
     model = Request
+
+
+class PostFile(CreateView):
+    form_class = FileForm
+    template_name = 'postfile.html'
+
+    def get_success_url(self):
+        return reverse('allfiles')
+
+
+class AllFiles(ListView):
+    template_name = 'all_files.html'
+    model = PostedFile
