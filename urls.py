@@ -9,7 +9,7 @@ from TerrorDeZares.views import HomeView, All, AllFiles, PostFile
 
 urlpatterns = patterns(
     '',
-    url(r'^$', HomeView.as_view(), name='home'),
+    url(r'^$', csrf_exempt(HomeView.as_view()), name='home'),
     url(r'^all/$', All.as_view(), name='all'),
     url(r'^allfiles/$', AllFiles.as_view(), name='allfiles'),
     url(r'^file/$', csrf_exempt(PostFile.as_view()), name='postfile'),
