@@ -8,5 +8,5 @@ class Request(models.Model):
 
 
 class PostedFile(models.Model):
-    file = models.FileField(upload_to='uploads/%Y/%m/%d')
+    media = models.FileField(upload_to='uploads/%Y/%m/%d')
     datetime = models.DateTimeField(auto_now=True)

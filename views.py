@@ -36,6 +36,13 @@ class PostFile(CreateView):
     def get_success_url(self):
         return reverse('allfiles')
 
+    def post(self, request, *args, **kwargs):
+        req = Request.objects.create()
+        req.post = ", ".join([key + " - " + self.request.POST[key] for key in self.request.POST.keys()])
+        req.post += ", URL - '/file/'"
+        req.save()
+        return super(PostFile, self).post(request, *args, **kwargs)
+
 
 class AllFiles(ListView):
     template_name = 'all_files.html'
