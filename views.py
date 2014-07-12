@@ -19,6 +19,10 @@ class HomeView(TemplateView):
         req.save()
         return context
 
+    def post(self, request, *args, **kwargs):
+        context = self.get_context_data(**kwargs)
+        return self.render_to_response(context)
+
 
 class All(ListView):
     template_name = 'all.html'
