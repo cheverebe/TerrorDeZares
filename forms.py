@@ -1,7 +1,7 @@
-from TerrorDeZares.models import PostedFile
+from TerrorDeZares.models import Student
 from django.forms import ModelForm
 
 
-class FileForm(ModelForm):
+class StudentForm(ModelForm):
     class Meta:
-        model = PostedFile
+        model = Student

@@ -5,14 +5,15 @@ from django.views.decorators.csrf import csrf_exempt
 # from django.contrib import admin
 # admin.autodiscover()
 from TerrorDeZares import settings
-from TerrorDeZares.views import HomeView, All, AllFiles, PostFile
+from TerrorDeZares.views import AllStudents, PostStudent#, HomeView, All
 
 urlpatterns = patterns(
     '',
-    url(r'^$', csrf_exempt(HomeView.as_view()), name='home'),
-    url(r'^all/$', All.as_view(), name='all'),
-    url(r'^allfiles/$', AllFiles.as_view(), name='allfiles'),
-    url(r'^file/$', csrf_exempt(PostFile.as_view()), name='postfile'),
+    #url(r'^$', csrf_exempt(HomeView.as_view()), name='home'),
+    url(r'^$', AllStudents.as_view(), name='allstudents'),
+    #url(r'^all/$', All.as_view(), name='all'),
+    #url(r'^allstudents/$', AllFiles.as_view(), name='allstudents'),
+    url(r'^student/$', csrf_exempt(PostStudent.as_view()), name='poststudent'),
     # url(r'^TerrorDeZares/', include('TerrorDeZares.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

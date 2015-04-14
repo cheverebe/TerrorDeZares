@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/lightbox.css" rel="stylesheet">
+    <script src="{{ STATIC_URL }}js/jquery-1.11.1.min.js"></script>
+    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+    <script src="{{ STATIC_URL }}js/lightbox.min.js"></script>
+    <title></title>
+</head>
+<body>
+<div class="container">
+        <h1>STUDENT LIST</h1>
+        <div class="row">
+            <div class="span8">
+                {% if form %}
+                <form method="post" action="." enctype="multipart/form-data">
+                    {{ form.as_p }}
+                    <input type="submit" value="Send"/>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+</div>
+</body>
+</html>

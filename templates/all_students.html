@@ -9,17 +9,22 @@
     <title></title>
 </head>
 <body>
+
 <div class="container">
+        <h1>STUDENT LIST</h1>
         <div class="row">
             <div class="span8">
     {% for object in object_list %}
                 <div style="float: left;padding: 2px;">
-                    <a href="{{ object.file.url }}" data-lightbox="{{ object.pk }}">
-                        <img style="max-height: 80px;max-width: 300px" src="{{ object.file.url }}">
-                    </a>
+                    <p>full_name:{{object.full_name}}</p>
+                    <p>dni:{{object.dni}}</p>
+                    <p>phoneNumber:{{object.phoneNumber}}</p>
                 </div>
+    {% empty %}
+    <h4>None</h4>
     {% endfor %}
             </div>
+        <a href="{% url poststudent %}">New</a>
         </div>
 </div>
 </body>
